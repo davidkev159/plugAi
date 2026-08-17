@@ -1,0 +1,314 @@
+[
+  {
+    "num": 2,
+    "app": "HubSpot",
+    "auth_methods": [
+      "OAuth2",
+      "Token (static/bearer)"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+      "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+      "https://developers.hubspot.com/docs/apps/legacy-apps/private-apps/overview"
+    ]
+  },
+  {
+    "num": 4,
+    "app": "Attio",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": true,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://www.automationjinn.com/blog/attio-api-guide",
+      "https://docs.attio.com/rest-api/guides/authentication",
+      "https://www.stacksync.com/blog/how-to-get-an-attio-developer-account-and-start-working-with-attios-api"
+    ]
+  },
+  {
+    "num": 14,
+    "app": "Front",
+    "auth_methods": [
+      "OAuth2",
+      "Token (static/bearer)"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable with a workaround",
+    "evidence_urls": [
+      "https://dev.frontapp.com/docs/authentication",
+      "https://community.front.com/api-news-updates-40"
+    ]
+  },
+  {
+    "num": 15,
+    "app": "Pylon",
+    "auth_methods": [
+      "Token (static/bearer)"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+      "https://docs.firetiger.com/integrations/developer-tools/pylon.html"
+    ]
+  },
+  {
+    "num": 22,
+    "app": "Twilio",
+    "auth_methods": [
+      "API key",
+      "Basic"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://www.twilio.com/en-us/blog/better-twilio-authentication-csharp-twilio-api-keys",
+      "https://apievangelist.com/2026/08/15/twilio-programmatic-onboarding-means-it"
+    ]
+  },
+  {
+    "num": 29,
+    "app": "Aircall",
+    "auth_methods": [
+      "Basic",
+      "OAuth2"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://developer.aircall.io/docs/authentication",
+      "https://developer.aircall.io/docs/basic-authentication"
+    ]
+  },
+  {
+    "num": 32,
+    "app": "Meta Ads",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access_tier": "Requires admin/org approval",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable with a workaround",
+    "evidence_urls": [
+      "https://admanage.ai/blog/meta-marketing-api-challenges-and-fix",
+      "https://www.adamigo.ai/blog/meta-ads-api-key-setup-guide"
+    ]
+  },
+  {
+    "num": 37,
+    "app": "systeme.io",
+    "auth_methods": [
+      "API key"
+    ],
+    "access_tier": "Self-serve, free trial",
+    "api_surface": "REST",
+    "existing_mcp": true,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp",
+      "https://thatmarketingbuddy.com/api/systeme-io"
+    ]
+  },
+  {
+    "num": 41,
+    "app": "Shopify",
+    "auth_methods": [
+      "OAuth2",
+      "Token (static/bearer)"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST + GraphQL",
+    "existing_mcp": true,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://tenten.co/shopifymcp/docs/course/mcp-deep-dive/shopify-store-mcp",
+      "https://shopify.dev/docs/apps/build/storefront-mcp/servers/customer-account"
+    ]
+  },
+  {
+    "num": 50,
+    "app": "fanbasis",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access_tier": "Unknown",
+    "api_surface": "Unknown",
+    "existing_mcp": false,
+    "buildability_verdict": "Blocked: unclear / needs human research",
+    "evidence_urls": [
+      "https://emergent.sh/integrations/fanbasis",
+      "https://docs.aura-app.ai/integrations/fanbasis"
+    ]
+  },
+  {
+    "num": 52,
+    "app": "SE Ranking",
+    "auth_methods": [
+      "API key"
+    ],
+    "access_tier": "Requires paid plan",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://seranking.com/api/data/getting-started",
+      "https://seranking.com/api.html"
+    ]
+  },
+  {
+    "num": 54,
+    "app": "MrScraper",
+    "auth_methods": [
+      "API key"
+    ],
+    "access_tier": "Unknown",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://docs.mrscraper.com/docs/api/overview",
+      "https://request.composio.dev/boards/tool-requests/posts/mrscraper"
+    ]
+  },
+  {
+    "num": 64,
+    "app": "Cloudflare",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": true,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://github.com/cloudflare/mcp",
+      "https://developers.cloudflare.com/cloudflare-one/access-controls/ai-controls/linked-apps"
+    ]
+  },
+  {
+    "num": 69,
+    "app": "Datadog",
+    "auth_methods": [
+      "API key"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://docs.datadoghq.com/api/latest",
+      "https://docs.aigateway.cequence.ai/docs/applications/data-analytics/datadog"
+    ]
+  },
+  {
+    "num": 71,
+    "app": "Notion",
+    "auth_methods": [
+      "Token (static/bearer)",
+      "OAuth2"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": true,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://www.scalekit.com/blog/notion-mcp-vs-api",
+      "https://developers.notion.com/guides/mcp/build-mcp-client"
+    ]
+  },
+  {
+    "num": 80,
+    "app": "Harvest",
+    "auth_methods": [
+      "Token (static/bearer)",
+      "OAuth2"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+      "https://www.stitchflow.com/user-management/harvest/api"
+    ]
+  },
+  {
+    "num": 84,
+    "app": "Paygent Connect",
+    "auth_methods": [
+      "API key"
+    ],
+    "access_tier": "Requires admin/org approval",
+    "api_surface": "REST",
+    "existing_mcp": true,
+    "buildability_verdict": "Buildable with a workaround",
+    "evidence_urls": [
+      "https://docs.nmi.com",
+      "https://www.nmi.com/developers/sdks-apis"
+    ]
+  },
+  {
+    "num": 89,
+    "app": "Ramp",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://docs.nexla.com/user-guides/connectors/ramp_api",
+      "https://support.ramp.com/accessing-the-developer-api"
+    ]
+  },
+  {
+    "num": 93,
+    "app": "Fathom",
+    "auth_methods": [
+      "API key"
+    ],
+    "access_tier": "Self-serve, free",
+    "api_surface": "REST",
+    "existing_mcp": false,
+    "buildability_verdict": "Buildable today",
+    "evidence_urls": [
+      "https://help.fathom.video/en/articles/8368641",
+      "https://developers.fathom.ai/api-overview"
+    ]
+  },
+  {
+    "num": 94,
+    "app": "Consensus",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access_tier": "Requires paid plan",
+    "api_surface": "REST",
+    "existing_mcp": true,
+    "buildability_verdict": "Buildable with a workaround",
+    "evidence_urls": [
+      "https://pipeline.zoominfo.com/sales/consensus-api",
+      "https://support.goconsensus.com/consensus-api-documents",
+      "https://consensus.app/home/api"
+    ]
+  }
+]
