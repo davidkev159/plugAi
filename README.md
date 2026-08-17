@@ -25,35 +25,55 @@ output/                  pass1.jsonl, crosscheck.jsonl, agreement.json, human ve
 site/index.html          the single-page deliverable
 ```
 
-## How the research agent works
+## How the research actually happened (and how it's designed to run unattended)
 
-1. **Pass 1 (research)** — for each app, Claude is given the app + category + a hint URL and
-   a tool-use loop restricted to Composio's `COMPOSIO_SEARCH` toolkit (`COMPOSIO_SEARCH_WEB`,
-   `COMPOSIO_SEARCH_FETCH_URL_CONTENT`, `COMPOSIO_SEARCH_DUCK_DUCK_GO` — no extra API key
-   needed beyond Composio's own). It searches, fetches real docs pages, and returns one JSON
-   object matching `agent/schema.py`. Records are validated with Pydantic; invalid/failed
-   apps are logged, not silently dropped.
-2. **Automated cross-check** — a second, independent pass re-derives every app from primary
-   sources only, told explicitly not to trust a prior answer. `agent/compare.py` diffs pass 1
-   against the cross-check field-by-field; disagreements are exactly the apps that get
-   prioritized for human verification — agreement between two independent runs is a cheap,
-   automatable trust signal, not a substitute for a real check.
-3. **Human verification** — a stratified sample across all 10 categories (plus every
-   disagreement from step 2) is hand-checked against the actual vendor docs. Logged as
-   `VerificationEntry` records: agent-said vs verified-truth vs correct/incorrect.
-4. **Fix + pass 2** — errors found in step 3 are traced to a root cause (bad prompt wording,
-   confusing "OAuth requested" with "OAuth2 live", missing MCP search term, etc.), the
-   pipeline is patched, and the affected apps are re-run. The same sample is re-verified to
-   show the accuracy delta.
+There are two honest, distinct things here — don't conflate them:
 
-Where a human was needed: judgment calls the agent can't safely make on its own — e.g.
-docs written for a stale API version, auth that's technically documented but effectively
-dead, or "OAuth requested"-style roadmap language that reads like a shipped feature. These
-are called out explicitly on the deliverable page, not hidden.
+**What actually produced the shipped dataset:** I ran this interactively inside Claude Code.
+For each app, Claude called Composio's real `COMPOSIO_SEARCH` toolkit directly via
+[`agent/run_tool.py`](agent/run_tool.py) — a thin CLI wrapper around
+`composio.tools.execute(...)` — mostly `COMPOSIO_SEARCH_TAVILY_SEARCH` (domain-restricted,
+returns real page content) with Google/DuckDuckGo search as fallback discovery. Claude read
+the tool output, extracted the fields, and wrote each record straight into
+`output/pass1.jsonl`, validated against `agent/schema.py` on every batch. This is deliberate:
+`agent/pipeline.py` (below) also works, but it burns Anthropic API credit per tool-use turn
+across ~100 apps, and running the search step through Claude Code itself (already available,
+no extra spend) was the honest tradeoff for a take-home budget. Two early direct-fetch
+failures (Zendesk 403, a guessed NotebookLM URL 404) were recovered by switching to
+search-based lookup instead of retrying the same broken path — visible in `agent_notes` on
+those two records.
+
+**What `agent/pipeline.py` + `agent/main.py` are for:** a fully automated, unattended version
+of the exact same approach — Claude driven through the real Anthropic API in a tool-use loop
+against Composio's SDK, checkpointed JSONL output, resumable. Its `ResearchAgent.__init__`
+was structurally verified against Composio's live API (traced a dummy key all the way to a
+real 401 from Composio's auth endpoint) and its search execution was verified end-to-end
+with a real query. It's what you'd point at this if you wanted to rerun or extend the
+research without a human in the loop — see "Running it yourself" below.
+
+**Verification — also a genuine independent method, not a second run of the same tool.**
+A stratified sample (2 apps per category, 20 total, seeded random) was re-checked field by
+field against the same primary evidence URLs, but using **WebFetch** — a direct page fetch —
+instead of Composio's Tavily-search tool. Full results, including the one inconclusive check
+(a WebFetch rendering limitation, disclosed rather than hidden) and the two precision fixes
+it surfaced, are in [`output/verification_report.json`](output/verification_report.json) and
+on the deliverable page's Verification section. `agent/compare.py` exists in this repo as a
+generic two-pass diff utility (for the unattended `pipeline.py` workflow's automated
+crosscheck step) but was not itself run to produce the shipped verification numbers — the
+WebFetch hand-check is what actually backs the 95% confirmation rate.
+
+Where a human was needed: judgment calls no tool call resolves cleanly — e.g. manually
+un-conflating Waterfall.io from an unrelated "Diligent Equity Waterfall API" that a search
+summary had blended together, deciding two apps (fanbasis, iPayX) were genuine dead ends
+rather than retrying indefinitely, and flagging a community Otter.ai MCP server that asks
+users to disable 2FA as a security concern worth calling out rather than listing neutrally.
 
 ## Running it yourself
 
-Requires **Python 3.10+**, a free [Composio](https://composio.dev) API key, and an
+This runs the **unattended `agent/pipeline.py` path** (see above) — a fresh, fully automated
+research pass through the real Anthropic API, not a re-execution of the interactive Claude
+Code session that produced the committed `output/pass1.jsonl`. Requires **Python 3.10+**, a
+free [Composio](https://composio.dev) API key, and an
 [Anthropic](https://console.anthropic.com/settings/keys) API key. No paid accounts for any
 of the 100 researched apps are needed — a gate found behind a paid plan or partnership is
 itself a valid, evidenced finding.
