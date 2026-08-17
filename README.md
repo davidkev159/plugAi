@@ -5,7 +5,8 @@ each could be wrapped as an agent toolkit today: auth method, self-serve vs gate
 API surface, existing MCP, and the buildability verdict — done with an agent, not by hand,
 with real verification loops behind the accuracy numbers.
 
-**Live case study:** <!-- TODO: deployed HTML URL --> \
+**Live case study:** https://claude.ai/code/artifact/67270e42-2dbf-4d35-9ca2-5f4f42459704 \
+**Source repo:** https://github.com/davidkev159/plugAi \
 **Deliverable page source:** [`site/index.html`](site/index.html)
 
 ## What's in this repo
