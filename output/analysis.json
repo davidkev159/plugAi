@@ -1,0 +1,306 @@
+{
+  "n_apps": 100,
+  "auth_method_distribution": {
+    "OAuth2": 62,
+    "API key": 35,
+    "Token (static/bearer)": 33,
+    "Basic": 10,
+    "HMAC-signed request": 2,
+    "Other": 2,
+    "No auth / public": 2
+  },
+  "access_tier_distribution": {
+    "Self-serve, free": 64,
+    "Self-serve, free trial": 14,
+    "Requires paid plan": 8,
+    "Requires admin/org approval": 8,
+    "Partnership / contact-sales gated": 3,
+    "Unknown": 3
+  },
+  "self_serve_vs_gated_overall": {
+    "self_serve": 78,
+    "gated": 19,
+    "unknown_or_unclear": 3
+  },
+  "category_breakdown": [
+    {
+      "category": "CRM and Sales",
+      "total": 10,
+      "self_serve": 9,
+      "gated": 1,
+      "unknown_or_unclear": 0,
+      "self_serve_pct": 90.0
+    },
+    {
+      "category": "Support and Helpdesk",
+      "total": 10,
+      "self_serve": 9,
+      "gated": 1,
+      "unknown_or_unclear": 0,
+      "self_serve_pct": 90.0
+    },
+    {
+      "category": "Communications and Messaging",
+      "total": 10,
+      "self_serve": 9,
+      "gated": 1,
+      "unknown_or_unclear": 0,
+      "self_serve_pct": 90.0
+    },
+    {
+      "category": "Marketing, Ads, Email and Social",
+      "total": 10,
+      "self_serve": 5,
+      "gated": 5,
+      "unknown_or_unclear": 0,
+      "self_serve_pct": 50.0
+    },
+    {
+      "category": "Ecommerce",
+      "total": 10,
+      "self_serve": 7,
+      "gated": 2,
+      "unknown_or_unclear": 1,
+      "self_serve_pct": 70.0
+    },
+    {
+      "category": "Data, SEO and Scraping",
+      "total": 10,
+      "self_serve": 6,
+      "gated": 3,
+      "unknown_or_unclear": 1,
+      "self_serve_pct": 60.0
+    },
+    {
+      "category": "Developer, Infra and Data platforms",
+      "total": 10,
+      "self_serve": 10,
+      "gated": 0,
+      "unknown_or_unclear": 0,
+      "self_serve_pct": 100.0
+    },
+    {
+      "category": "Productivity and Project Management",
+      "total": 10,
+      "self_serve": 10,
+      "gated": 0,
+      "unknown_or_unclear": 0,
+      "self_serve_pct": 100.0
+    },
+    {
+      "category": "Finance and Fintech",
+      "total": 10,
+      "self_serve": 7,
+      "gated": 2,
+      "unknown_or_unclear": 1,
+      "self_serve_pct": 70.0
+    },
+    {
+      "category": "AI, Research and Media-native",
+      "total": 10,
+      "self_serve": 6,
+      "gated": 4,
+      "unknown_or_unclear": 0,
+      "self_serve_pct": 60.0
+    }
+  ],
+  "buildability_verdict_distribution": {
+    "Buildable today": 76,
+    "Buildable with a workaround": 16,
+    "Blocked: access/credential gate": 6,
+    "Blocked: unclear / needs human research": 2
+  },
+  "api_surface_distribution": {
+    "REST": 87,
+    "REST + GraphQL": 6,
+    "GraphQL": 3,
+    "Unknown": 2,
+    "No public API found": 2
+  },
+  "mcp_adoption": {
+    "count": 21,
+    "pct": 21.0,
+    "apps": [
+      "Apify",
+      "Attio",
+      "Clay",
+      "Close",
+      "Cloudflare",
+      "Consensus",
+      "DealCloud",
+      "Devin",
+      "Firecrawl",
+      "GitHub",
+      "Linear",
+      "Notion",
+      "Otter AI",
+      "Paygent Connect",
+      "Plain",
+      "Shopify",
+      "Slack",
+      "Stripe",
+      "Supabase",
+      "YouTube Transcript",
+      "systeme.io"
+    ]
+  },
+  "main_blocker_buckets": {
+    "App/developer review process": 11,
+    "Requires paid plan/subscription": 5,
+    "Other": 3,
+    "Partnership / sales contact required": 2,
+    "Not a hosted API (CLI/local tool)": 2,
+    "Research gap (no primary docs found)": 1
+  },
+  "easy_wins": [
+    "Aircall",
+    "Airtable",
+    "Asana",
+    "Attio",
+    "Binance",
+    "Brex",
+    "ClickUp",
+    "Close",
+    "Cloudflare",
+    "Coda",
+    "Copper",
+    "Datadog",
+    "Discord",
+    "Ecwid",
+    "Fathom",
+    "Freshdesk",
+    "GitHub",
+    "GoHighLevel",
+    "Gorgias",
+    "Gumroad",
+    "Harvest",
+    "Help Scout",
+    "HubSpot",
+    "Intercom",
+    "Jira",
+    "Klaviyo",
+    "Lark (Larksuite)",
+    "Linear",
+    "LiveAgent",
+    "Magento (Adobe Commerce)",
+    "Mailchimp",
+    "Mermaid CLI",
+    "Monday.com",
+    "MongoDB Atlas",
+    "Neo4j",
+    "Netlify",
+    "Notion",
+    "Pipedrive",
+    "Plain",
+    "Pylon",
+    "QuickBooks",
+    "Ramp",
+    "Reducto",
+    "Salesforce",
+    "SendGrid",
+    "Sentry",
+    "Shopify",
+    "Slack",
+    "Smartsheet",
+    "Squarespace",
+    "Stripe",
+    "Supabase",
+    "Telegram",
+    "Twenty",
+    "Twilio",
+    "Vercel",
+    "Vonage",
+    "WooCommerce",
+    "Xero",
+    "Zendesk",
+    "Zoho CRM",
+    "Zoho Cliq"
+  ],
+  "needs_outreach": [
+    {
+      "app": "DealCloud",
+      "category": "CRM and Sales",
+      "reason": "Requires an existing paid DealCloud subscription and admin-provisioned API credentials \u2014 no public self-serve signup found."
+    },
+    {
+      "app": "LinkedIn Ads",
+      "category": "Marketing, Ads, Email and Social",
+      "reason": "Ads/analytics access requires the Marketing Developer Platform partner program: manual approval, undisclosed timeline, reportedly $699+/month once approved -- the most gated marketing API found in this category."
+    },
+    {
+      "app": "NotebookLM",
+      "category": "AI, Research and Media-native",
+      "reason": "No public/self-serve API for the consumer product at all; the only API (Gemini Notebook Enterprise, Preview) requires a paid enterprise license and Google Cloud admin setup."
+    },
+    {
+      "app": "PitchBook",
+      "category": "Finance and Fintech",
+      "reason": "Fully contract-gated: API access/credits must be purchased through an assigned account manager. Even the API DOCUMENTATION itself is private and visible only to contracted clients -- no public docs, API explorer, changelog, or self-serve trial of any kind."
+    },
+    {
+      "app": "Salesforce Commerce Cloud",
+      "category": "Ecommerce",
+      "reason": "Requires an existing paid Salesforce Commerce Cloud instance to register API clients against -- no free/self-serve sandbox found in these sources."
+    },
+    {
+      "app": "Waterfall.io",
+      "category": "Data, SEO and Scraping",
+      "reason": "Marketing page routes API access through a 'Book a Call' CTA rather than instant self-serve signup."
+    }
+  ],
+  "research_gaps": [
+    {
+      "app": "fanbasis",
+      "num": 50,
+      "issue": "No official FanBasis developer documentation site was located in this pass -- genuinely unclear whether the app has a stable public API at all, versus only ad hoc/webhook-based integrations exposed through partner platforms."
+    },
+    {
+      "app": "iPayX",
+      "num": 85,
+      "issue": "Could not locate any primary documentation for ipayx.ai. A domain-restricted search (include_domains=['ipayx.ai']) returned zero results, suggesting the domain may not be indexed, may not exist as given, or may require a different discovery path (e.g. it could be a very new or very small product)."
+    }
+  ],
+  "avg_confidence": 0.74,
+  "lowest_confidence_apps": [
+    {
+      "app": "iPayX",
+      "num": 85,
+      "confidence": 0.1
+    },
+    {
+      "app": "fanbasis",
+      "num": 50,
+      "confidence": 0.3
+    },
+    {
+      "app": "Pumble",
+      "num": 25,
+      "confidence": 0.5
+    },
+    {
+      "app": "Podio",
+      "num": 6,
+      "confidence": 0.55
+    },
+    {
+      "app": "Front",
+      "num": 14,
+      "confidence": 0.55
+    },
+    {
+      "app": "Magento (Adobe Commerce)",
+      "num": 45,
+      "confidence": 0.55
+    },
+    {
+      "app": "MrScraper",
+      "num": 54,
+      "confidence": 0.55
+    },
+    {
+      "app": "Waterfall.io",
+      "num": 59,
+      "confidence": 0.55
+    }
+  ]
+}
