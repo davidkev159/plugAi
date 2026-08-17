@@ -1,0 +1,7 @@
+composio>=1.0.0rc10
+composio_anthropic>=1.0.0rc10
+anthropic>=0.40
+pydantic>=2.7
+python-dotenv>=1.0
+tenacity>=8.2
+rich>=13.7
