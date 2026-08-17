@@ -66,7 +66,22 @@ class ResearchAgent:
         # composio.tools.get(...) is the real (rc) SDK surface — earlier docs describe a
         # composio.create()/session.tools() wrapper that isn't in the installed 1.0 rc;
         # verified against the actual installed package via introspection, not assumed.
-        self.tools = self.composio.tools.get(user_id=user_id, toolkits=["COMPOSIO_SEARCH"])
+        #
+        # The COMPOSIO_SEARCH toolkit also doesn't ship the FETCH_URL_CONTENT tool the docs
+        # site described (verified live: 13 real tools, no such slug among them). Scoped
+        # instead to the 4 tools actually useful for docs research — Google/DuckDuckGo search
+        # for discovery, Tavily search (which supports include_raw_content +
+        # include_domains, i.e. a domain-restricted "fetch full page text") for reading a
+        # specific docs page, and Exa's cited-answer tool as a cross-check.
+        self.tools = self.composio.tools.get(
+            user_id=user_id,
+            tools=[
+                "COMPOSIO_SEARCH_SEARCH",
+                "COMPOSIO_SEARCH_TAVILY_SEARCH",
+                "COMPOSIO_SEARCH_DUCK_DUCK_GO_SEARCH",
+                "COMPOSIO_SEARCH_EXA_ANSWER",
+            ],
+        )
 
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=2, min=2, max=20))
     def _call_model(self, messages: list[dict]):
